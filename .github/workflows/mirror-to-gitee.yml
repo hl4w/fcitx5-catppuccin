@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Mirror to Gitee
         uses: wearerequired/git-mirror-action@v1
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_TOKEN }}
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_TOKEN }}
         with:
           source-repo: https://github.com/hl4w/fcitx5-catppuccin.git
           destination-repo: git@gitee.com:hl4w/fcitx5-catppuccin.git
